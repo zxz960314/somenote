@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<meta charset="UTF-8">
+	<title>Document</title>
+	  <style type="text/css">
+	*{padding: 0;margin: 0}
+	body{width:100%;height: 100%;background:#f1f1f1}
+	a{text-decoration: none}
+	li{list-style: none;}
+	input{outline: none;border:none;}
+	.header{width:100%;height:42px;background:#ff6e83;color:#fff;box-shadow: 0 2px 2px #999;display:-webkit-box;}
+	.header div{-webkit-box-flex:3}
+	.header img{float: left;width: 13px;height: 11px;margin-top: 15px;margin-left: 20px;}
+	.header p{font-size: 17px;text-align: center;line-height:42px;}
+	.header span{float:right;font-size:12px;margin-right:15px;}
+	.logo{color:#FF6E83;font-size:25px;height:102px;display:-webkit-box;-webkit-box-align:center;-webkit-box-pack:center;}
+	.content{width:100%;height:182px;-webkit-box-orient:vertical;}
+	.content p{height:40px;background:#fff;margin-left:9px;margin-right:9px;font-size:12px;line-height:40px;}
+	.content p:first-of-type{border:1px solid #ddd;border-top-right-radius: 1px;border-top-left-radius: 1px;}
+	.content p:first-of-type input{color:#ccc;}
+	.content p span{background:url(../images/img_11.png) right no-repeat;float:left;width:50px;text-indent:1px;text-align: center;color: #959595}
+	.content p:nth-child(2){border-bottom-right-radius: 1px;
+	border-bottom-left-radius: 1px;border:1px solid #ddd;border-top: none;} 
+	.content p:nth-child(3){margin-top:25px;background:none;}
+	.content p:nth-child(3) input{width:100%;height:30px;background:#ff6e83;color:#fff;line-height: 30px}
+	.content p:nth-child(4){color:#858585;background:none;height:40px;line-height: 40px}
+	.denglu{margin-left: 10px;margin-right: 15px;height:31px;
+	background: url(../images/ht.png) repeat-x;
+	background-size:100% 100%; text-align: center;text-indent:50px;}
+	.denglu span{height:31px;line-height:31px;font-size: 12px;padding:0px 5px;color:#757575;background: #f1f1f1;}
+	.footer{margin-top:50px;width:100%;}
+	.footer div{text-align: center;}
+	.footer div img{width:33px;height:33px;margin-left:13px;}
+	.footer p{color:#858585;text-align: center;margin-top:20px;margin-left:15px;font-size:12px;}
+    </style>
+</head>
+<body>
+<div ng-controller="zhuce">
+<div class="header">
+		<div>
+		<img src="../images/img_03.png">
+		<p>注册<span style="cursor:pointer">更多</span></p>
+		</div>
+	</div>
+	<div class="logo">
+		<h2>somenote</h2>
+	</div>
+	 <div class="content">
+		 <p><span>账号：</span> <input type="text"  ng-model="updata.username" style="width:75%;height:36px"></p>
+		 <p><span>密码：</span><input type="password" ng-model="updata.password" style="width:75%;height:38px"> </p>
+		<p><input ng-click="zhuce()" type="button" value="立即注册"></p>
+		<p><span style="float:right">关于</span></p>
+			</div> 
+			
+		<div class="denglu">
+			
+			<span>分享</span>
+			
+		</div>
+	 <div class="footer">
+			<div><img src="../images/img_15.png"><img src="../images/img_17.png"><img src="../images/img_19.png"></div>
+			<p>使用第三方账号一键分享,结交更多的朋友！</p>
+		</div>
+		
+</div>
+      <!-- end controller -->
+   
+</body>
+</html>

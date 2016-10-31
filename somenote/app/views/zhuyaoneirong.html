@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<meta charset="UTF-8">
+	<title>记事本</title>
+	<link rel="stylesheet" type="text/css" href="../styles/reset.css">
+	<style>
+	body{width:100%;height:100%;position:relative;}
+	input{outline: none;border:none;font-family: "微软雅黑";}
+	.header{height:45px;width:100%;background:#FF6E83;}
+	.header p{line-height:45px;font-size:13px;text-indent:11px;color:#fff;width: 100%}
+	.main{width:100%;background:#fff;}
+	.main ul{border-bottom:1px solid #ddd;background:#fff;width:100%;height:40px;display:-webkit-box;-webkit-box-orient:horizontal;}
+	.main ul li{height:40px;-webkit-box-flex:1;text-align: center;line-height:40px;cursor:pointer;}
+	.ipt1{font-size: 12px;color: #000;text-align: center;background: #FA98A5}
+	.ipt2{font-size: 12px;color: #000;width: 100%;height: 175px;text-indent: 30px;line-height: 30px;resize:none}
+	.main div{height:180px;margin-left:15px;margin-right:15px;margin-top:15px;font-size:15px }
+	.main div h3{width: 100%;height:30px;line-height:30px;text-align: center;font-size: 15px;background: #FA98A5}
+	.main div h3 span{font-size: 11px;}
+	.main div p{width: 100%;height:150px;line-height:30px;}
+	.srk{width: 100%;height: 150px;resize:none;text-indent:30px;border:none;overflow:hidden;font-size: 13px;background:url(../images/bj.jpg);background-size: 100% 100%}
+	.cc h3{background:#cccccc;width: 100%;height:35px;line-height:35px;text-align: center;font-size: 16px;}
+	.cc h3 span{font-size: 11px;}
+	.cc p{width: 100%;height:175px;}
+    </style>
+</head>
+<body >
+
+<div ng-controller="neirong">
+	<div class="header">
+
+
+		<p>记事本<input type="text" ng-model="n" style="width:52%;height:30px;margin-left:2%;color:#000"><span ng-click="tui()"> 退出</span><span style="float:right;"  ui-sref="j">新增</span> </p>
+		
+	</div>
+	<div class="main">
+			
+		 	<div  ng-repeat="x in data|orderBy:abc|filter:n" >
+		 	 
+				<h3><input type="text"  value="{{x.title}}" style="background:#FA98A5;margin-left:20%;font-size:13px" disabled="disabled"><span style="float:right;"  ng-click="shanchu(x)">删除</span><span style="float:right;margin-right:10px" ng-click="bianji(x)">编辑</span></h3>
+				<p><textarea  disabled="disabled" class="srk">{{x.content}}</textarea></p>
+		</div>
+			<div ng-show="show" style="width:80%;height:210px;position:fixed;top:50%;left:50%;margin-top:-105px;margin-left:-40%">
+				<h3><input type="text" class="ipt1"  ng-model="updata.title" style="margin-left:20%";><span style="float:right;margin-right:3%" ng-click="querenxiugai()">确认修改</span></h3>
+				<p><textarea class="ipt2" ng-model="updata.content"></textarea></p>
+			</div>
+		 
+	</div>
+		<div style="width:100%;height:20px"></div>
+		<button style="font-size:12px;color:#000;margin-left:40%;border:none;background:#FFFFFF" ng-click="shang()" >上一页</button>
+		<button style="font-size:12px;color:#000;margin-left:40%;border:none;background:#FFFFFF" ng-click="xia()" >下一页</button>
+		<div style="width:100%;height:10px"></div>
+     </div>
+	</div>
+
+</body>
+</html>
